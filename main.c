@@ -87,6 +87,7 @@ ElemType GetTop(SeqStack *s,ElemType *x){
 
 void SetEmpty(SeqStack *s){
     s->top=-1;
+    //╡Бйт╣з╤Ч╦Ж╡ж©Б
 }
 
 
