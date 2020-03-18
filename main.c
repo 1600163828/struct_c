@@ -1,3 +1,115 @@
+//顺序栈
+#include <stdio.h>
+#include <stdlib.h>
+typedef int ElemType;
+#define MAXSIZE 50
+#define TRUE 1
+#define FALSE 0
+typedef struct {
+    ElemType elem[MAXSIZE];
+    int top;
+}SeqStack;
+
+
+ElemType topElem;//出栈的元素
+ElemType GetElem;//取到的栈顶元素
+
+//*************************************************
+
+//初始化
+SeqStack *InitStack();
+
+//判断栈是否为空
+int Empty(SeqStack *s);
+
+//判断栈是否为已满
+int Full(SeqStack *s);
+
+//入栈
+int Push(SeqStack *s,ElemType x);
+
+//出栈
+ElemType Pop(SeqStack *s,ElemType *x);
+
+//取栈顶元素
+ElemType GetTop(SeqStack *s,ElemType *x);
+
+//置栈为空
+void SetEmpty(SeqStack *s);
+
+//*************************************************
+
+SeqStack *InitStack(){
+    SeqStack *s;
+    s=(SeqStack *)malloc(sizeof(SeqStack));
+    s->top=-1;
+    return s;
+}
+
+int Empty(SeqStack *s){
+    return s->top==-1?TRUE:FALSE;
+}
+
+int Full(SeqStack *s){
+    return s->top==MAXSIZE-1?TRUE:FALSE;
+}
+
+int Push(SeqStack *s,ElemType x){
+    if(Full(s)){
+        return FALSE;
+    } else{
+        s->top++;
+        s->elem[s->top]=x;
+        return TRUE;
+    }
+}
+
+ElemType Pop(SeqStack *s,ElemType *x){
+    if(Empty(s)){
+        return FALSE;
+    } else{
+
+        *x=s->elem[s->top];
+        s->top--;
+        return TRUE;
+    }
+}
+
+ElemType GetTop(SeqStack *s,ElemType *x){
+
+    if(Empty(s)){
+        return FALSE;
+    } else{
+        *x=s->elem[s->top];
+        return TRUE;
+    }
+}
+
+void SetEmpty(SeqStack *s){
+    s->top=-1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -88,49 +200,7 @@ void pur_LinkList(LinkList H){
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 /*
