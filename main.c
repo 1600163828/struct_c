@@ -87,7 +87,7 @@ ElemType GetTop(SeqStack *s,ElemType *x){
 
 void SetEmpty(SeqStack *s){
     s->top=-1;
-    //测试第二个仓库2
+    //测试第二个仓库22
 }
 
 
