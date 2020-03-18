@@ -71,7 +71,22 @@ void Reverse(LinkList H){
         H->next=q;
     }
 }
-
+//单链表删除重复节点
+void pur_LinkList(LinkList H){
+    LNode *p,*q,*r;
+    p=H->next;
+    while (p!=NULL){
+        q=p;
+        while(q->next){
+            if(q->next->data==p->data){
+                r=q->next;
+                q->next=r->next;
+                free(r);
+            } else q=q->next;
+        }
+        p=p->next;
+    }
+}
 
 
 
